@@ -5,9 +5,6 @@
 #define MOUSE_TP_SET 4
 
 #include <zephyr/dt-bindings/input/input-event-codes.h>
-#include <behaviors/toggle_io.dtsi>
-#include <behaviors/on_io.dtsi>
-#include <behaviors/off_io.dtsi>
 #include <dt-bindings/zmk/rgb.h>
 #include <dt-bindings/zmk/outputs.h>
 #include <input/processors.dtsi>
@@ -44,12 +41,6 @@
             ccw-binding = <&kp C_VOL_DN>;
         };
 
-        rsr_trans: rsr_trans {
-            compatible = "zmk,behavior-runtime-sensor-rotate";
-            #sensor-binding-cells = <0>;
-            tap-ms = <0>;
-        };
-
         ltq: ltq {
             compatible = "zmk,behavior-hold-tap";
             label = "LTQ";
@@ -84,7 +75,7 @@
             >;
 
             label = "layer0";
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_vol>;
         };
 
         layer_1 {
@@ -98,7 +89,7 @@
             >;
 
             label = "layer1";
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_vol>;
         };
 
         layer_2 {
@@ -112,7 +103,7 @@
             >;
 
             label = "layer2";
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_vol>;
         };
 
         layer_3 {
@@ -126,7 +117,7 @@
             >;
 
             label = "layer3";
-            sensor-bindings = <&rsr_vol &rsr_trans>;
+            sensor-bindings = <&rsr_vol>;
         };
     };
 };
